@@ -1,6 +1,8 @@
 
 # canslope.scad
 
+A slope for cans in the fridge.
+
 http://www.kadealu.com/8-1-aluminium-beverage-can.html "standard 355ml"
 
 
