@@ -11,6 +11,8 @@ can_height = 122;
 can_diameter = 66;
 can_base_diameter = 52;
 
+can_height_two = 113;
+
 slope_length = 300;
 slope_height = 40;
 x_margin = 3;
@@ -20,10 +22,10 @@ alpha = atan(slope_height / slope_length);
 //node_diameter= 14;
 //axis_diameter= 10;
 
-ball_radius = 5;
+ball_radius = 4.2;
 br = ball_radius;
 sl2 = slope_length / 2;
-ch2 = can_height / 2;
+ch2 = can_height_two / 2;
 sh = slope_height;
 cdi = can_diameter - can_base_diameter;
 
@@ -48,8 +50,13 @@ difference() {
     hull() {
       cd2 = can_diameter / 2;
       translate([ -ch2, -sl2, 0 ]) sphere(r=br);
-      translate([ +ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ -ch2, -sl2 * 0.93, 0 ]) sphere(r=br);
       translate([ -ch2, -sl2, cd2 ]) sphere(r=br);
+    }
+    hull() {
+      cd2 = can_diameter / 2;
+      translate([ +ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, -sl2 * 0.93, 0 ]) sphere(r=br);
       translate([ +ch2, -sl2, cd2 ]) sphere(r=br);
     }
     hull() {
@@ -85,7 +92,7 @@ difference() {
     rotate([ 90, 0, 0 ])
       cylinder(r=tr, h=slope_length * 1.2, center=true);
 
-  ar = can_diameter * 0.56;
+  ar = can_diameter * 0.50;
     //
   translate([ 0, slope_length * 0.35, 0 ])
     rotate([ 0, 90, 0 ])
