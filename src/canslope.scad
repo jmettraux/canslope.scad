@@ -73,20 +73,20 @@ difference() {
     }
   }
 
-  hr = can_height * 0.84;
+  hr = can_height * 0.63;
   dy = 10;
   hh = slope_height * 3;
 
   translate([ 0, - hr / 2 - dy, 0 ])
     cylinder(d=hr, h=hh, center=true);
-  translate([ 0, - hr - dy, 0 ])
-    cube([ hr, hr, hh ], center=true);
+  translate([ 0, - hr * 1.5 - dy, 0 ])
+    cube([ hr, hr * 2, hh ], center=true);
   translate([ 0, + hr / 2 + dy, 0 ])
     cylinder(d=hr, h=hh, center=true);
-  translate([ 0, + hr + dy, 0 ])
-    cube([ hr, hr, hh ], center=true);
+  translate([ 0, + hr * 1.5 + dy, 0 ])
+    cube([ hr, hr * 2, hh ], center=true);
 
-  tr = can_diameter * 0.84;
+  tr = can_diameter * 0.63;
     //
   translate([ 0, 0, tr ])
     rotate([ 90, 0, 0 ])
@@ -98,9 +98,9 @@ difference() {
     rotate([ 0, 90, 0 ])
       cylinder(r=ar, h=can_height * 1.2, center=true);
 
-  //hside = 200; // halfer side
-  //  //
-  //#translate([ 0, 100, 0 ])
-  //  cube([ hside, hside, hside ], center=true);
+  hside = 200; // halfer side
+    //
+  #translate([ 0, 100, 0 ])
+    cube([ hside, hside, hside ], center=true);
 }
 
