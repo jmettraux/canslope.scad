@@ -79,14 +79,21 @@ difference() {
   translate([ 0, + hr + dy, 0 ])
     cube([ hr, hr, hh ], center=true);
 
-
-  //#translate([ 0, -30, 0 ])
-  //  rotate([ 0, 90, 0 ])
-  //    cylinder(r=21, h=can_height * 1.2, center=true);
-
-  hside = 200; // halfer side
+  tr = can_diameter * 0.84;
     //
-  #translate([ 0, 100, 0 ])
-    cube([ hside, hside, hside ], center=true);
+  translate([ 0, 0, tr ])
+    rotate([ 90, 0, 0 ])
+      cylinder(r=tr, h=slope_length * 1.2, center=true);
+
+  ar = can_diameter * 0.56;
+    //
+  translate([ 0, slope_length * 0.35, 0 ])
+    rotate([ 0, 90, 0 ])
+      cylinder(r=ar, h=can_height * 1.2, center=true);
+
+  //hside = 200; // halfer side
+  //  //
+  //#translate([ 0, 100, 0 ])
+  //  cube([ hside, hside, hside ], center=true);
 }
 
