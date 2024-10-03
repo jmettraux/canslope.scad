@@ -20,9 +20,73 @@ alpha = atan(slope_height / slope_length);
 //node_diameter= 14;
 //axis_diameter= 10;
 
+ball_radius = 5;
+br = ball_radius;
+sl2 = slope_length / 2;
+ch2 = can_height / 2;
+sh = slope_height;
+cdi = can_diameter - can_base_diameter;
+
 
 difference() {
 
-  // TODO use hulls
+  union() {
+    hull() {
+
+      // floor
+      translate([ -ch2, +sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, +sl2, 0 ]) sphere(r=br);
+      translate([ -ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, -sl2, 0 ]) sphere(r=br);
+
+      // slope
+      translate([ -ch2, +sl2, sh ]) sphere(r=br);
+      translate([ +ch2, +sl2, sh ]) sphere(r=br);
+      translate([ -ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, -sl2, 0 ]) sphere(r=br);
+    }
+    hull() {
+      cd2 = can_diameter / 2;
+      translate([ -ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ -ch2, -sl2, cd2 ]) sphere(r=br);
+      translate([ +ch2, -sl2, cd2 ]) sphere(r=br);
+    }
+    hull() {
+      translate([ -ch2, +sl2, 0 ]) sphere(r=br);
+      translate([ -ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ -ch2, -sl2, cdi ]) sphere(r=br);
+      translate([ -ch2, +sl2, sh + cdi ]) sphere(r=br);
+    }
+    hull() {
+      translate([ +ch2, +sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, -sl2, cdi ]) sphere(r=br);
+      translate([ +ch2, +sl2, sh + cdi ]) sphere(r=br);
+    }
+  }
+
+  hr = can_height * 0.84;
+  dy = 10;
+  hh = slope_height * 3;
+
+  translate([ 0, - hr / 2 - dy, 0 ])
+    cylinder(d=hr, h=hh, center=true);
+  translate([ 0, - hr - dy, 0 ])
+    cube([ hr, hr, hh ], center=true);
+  translate([ 0, + hr / 2 + dy, 0 ])
+    cylinder(d=hr, h=hh, center=true);
+  translate([ 0, + hr + dy, 0 ])
+    cube([ hr, hr, hh ], center=true);
+
+
+  //#translate([ 0, -30, 0 ])
+  //  rotate([ 0, 90, 0 ])
+  //    cylinder(r=21, h=can_height * 1.2, center=true);
+
+  hside = 200; // halfer side
+    //
+  #translate([ 0, 100, 0 ])
+    cube([ hside, hside, hside ], center=true);
 }
 
