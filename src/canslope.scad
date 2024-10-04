@@ -11,7 +11,7 @@ can_height = 122;
 can_diameter = 66;
 can_base_diameter = 52;
 
-can_height_two = 113;
+can_height_two = 116;
 
 slope_length = 300;
 slope_height = 40;
@@ -27,7 +27,8 @@ br = ball_radius;
 sl2 = slope_length / 2;
 ch2 = can_height_two / 2;
 sh = slope_height;
-cdi = can_diameter - can_base_diameter;
+//cdi = can_diameter - can_base_diameter;
+cdi = 14 - 9;
 
 
 difference() {
@@ -48,13 +49,13 @@ difference() {
       translate([ +ch2, -sl2, 0 ]) sphere(r=br);
     }
     hull() {
-      cd2 = can_diameter / 2;
+      cd2 = can_diameter / 3;
       translate([ -ch2, -sl2, 0 ]) sphere(r=br);
       translate([ -ch2, -sl2 * 0.93, 0 ]) sphere(r=br);
       translate([ -ch2, -sl2, cd2 ]) sphere(r=br);
     }
     hull() {
-      cd2 = can_diameter / 2;
+      cd2 = can_diameter / 3;
       translate([ +ch2, -sl2, 0 ]) sphere(r=br);
       translate([ +ch2, -sl2 * 0.93, 0 ]) sphere(r=br);
       translate([ +ch2, -sl2, cd2 ]) sphere(r=br);
@@ -74,7 +75,7 @@ difference() {
   }
 
   hr = can_height * 0.63;
-  dy = 10;
+  dy = 15;
   hh = slope_height * 3;
 
   translate([ 0, - hr / 2 - dy, 0 ])
@@ -86,9 +87,9 @@ difference() {
   translate([ 0, + hr * 1.5 + dy, 0 ])
     cube([ hr, hr * 2, hh ], center=true);
 
-  tr = can_diameter * 0.63;
+  tr = can_diameter * 0.56;
     //
-  translate([ 0, 0, tr ])
+  translate([ 0, 0, tr * 1.1 ])
     rotate([ 90, 0, 0 ])
       cylinder(r=tr, h=slope_length * 1.2, center=true);
 
