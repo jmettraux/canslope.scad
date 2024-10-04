@@ -13,7 +13,7 @@ can_base_diameter = 52;
 
 can_height_two = 116;
 
-slope_length = 290;
+slope_length = 260;
 slope_height = 40;
 x_margin = 3;
 alpha = atan(slope_height / slope_length);
@@ -62,7 +62,7 @@ difference() {
     }
     hull() {
       //cd3 = can_diameter / 4.5;
-      cd3 = 14;
+      cd3 = 13.5;
       translate([ -ch2, -sl2, 0 ]) sphere(r=br);
       translate([ -ch2, -sl2, cd3 ]) sphere(r=br);
       translate([ +ch2, -sl2, 0 ]) sphere(r=br);
@@ -112,4 +112,16 @@ difference() {
   //#translate([ 0, 100, 0 ])
   //  cube([ hside, hside, hside ], center=true);
 }
+
+
+module can() {
+  rotate([ 0, 90, 0 ]) cylinder(d=can_diameter, h=can_height, center=true);
+}
+cd = can_diameter;
+yy = cd / 2.3;
+#translate([ 0, yy + -2 * cd, cd * 0.70 ]) can();
+#translate([ 0, yy + -1 * cd, cd * 0.85 ]) can();
+#translate([ 0, yy +  0 * cd, cd * 1.00 ]) can();
+#translate([ 0, yy +  1 * cd, cd * 1.15 ]) can();
+//#translate([ 0, yy +  2 * cd, cd * 1.1 ]) can();
 
