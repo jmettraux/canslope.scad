@@ -13,7 +13,7 @@ can_base_diameter = 52;
 
 can_height_two = 116;
 
-slope_length = 300;
+slope_length = 290;
 slope_height = 40;
 x_margin = 3;
 alpha = atan(slope_height / slope_length);
@@ -99,9 +99,9 @@ difference() {
     rotate([ 0, 90, 0 ])
       cylinder(r=ar, h=can_height * 1.2, center=true);
 
-  hside = 200; // halfer side
-    //
-  #translate([ 0, 100, 0 ])
-    cube([ hside, hside, hside ], center=true);
+  //hside = 200; // halfer side
+  //  //
+  //#translate([ 0, 100, 0 ])
+  //  cube([ hside, hside, hside ], center=true);
 }
 
