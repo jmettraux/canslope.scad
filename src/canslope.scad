@@ -61,6 +61,14 @@ difference() {
       translate([ +ch2, -sl2, cd2 ]) sphere(r=br);
     }
     hull() {
+      //cd3 = can_diameter / 4.5;
+      cd3 = 14;
+      translate([ -ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ -ch2, -sl2, cd3 ]) sphere(r=br);
+      translate([ +ch2, -sl2, 0 ]) sphere(r=br);
+      translate([ +ch2, -sl2, cd3 ]) sphere(r=br);
+    }
+    hull() {
       translate([ -ch2, +sl2, 0 ]) sphere(r=br);
       translate([ -ch2, -sl2, 0 ]) sphere(r=br);
       translate([ -ch2, -sl2, cdi ]) sphere(r=br);
