@@ -101,6 +101,12 @@ difference() {
     rotate([ 90, 0, 0 ])
       cylinder(r=tr, h=slope_length * 1.2, center=true);
 
+  ur = can_diameter * 0.9;
+    //
+  translate([ 0, 0.4 * slope_length, -ur * 0.45 ])
+    rotate([ 90, 0, 0 ])
+      cylinder(r=ur, h=0.5 * slope_length, center=true);
+
   //ar = can_diameter * 0.50;
   //  //
   //translate([ 0, slope_length * 0.35, 0 ])
