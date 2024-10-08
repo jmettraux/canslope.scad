@@ -13,7 +13,7 @@ can_base_diameter = 52;
 
 can_height_two = 116;
 
-slope_length = 260;
+slope_length = 300;
 slope_height = 40;
 x_margin = 3;
 alpha = atan(slope_height / slope_length);
@@ -97,31 +97,37 @@ difference() {
 
   tr = can_diameter * 0.56;
     //
-  translate([ 0, 0, tr * 1.1 ])
+  translate([ 0, 0, tr * 1.4 ])
     rotate([ 90, 0, 0 ])
       cylinder(r=tr, h=slope_length * 1.2, center=true);
 
-  ar = can_diameter * 0.50;
+  //ar = can_diameter * 0.50;
+  //  //
+  //translate([ 0, slope_length * 0.35, 0 ])
+  //  rotate([ 0, 90, 0 ])
+  //    cylinder(r=ar, h=can_height * 1.2, center=true);
+
+  xr = 10;
     //
-  translate([ 0, slope_length * 0.35, 0 ])
+  translate([ 0, - 0.5 * slope_length - 0.1 * xr, - 0.7 * xr ])
     rotate([ 0, 90, 0 ])
-      cylinder(r=ar, h=can_height * 1.2, center=true);
+      cylinder(r=xr, h=can_height * 1.2, center=true);
 
   //hside = 200; // halfer side
   //  //
-  //#translate([ 0, 100, 0 ])
+  //translate([ 0, 100, 0 ])
   //  cube([ hside, hside, hside ], center=true);
 }
 
 
-module can() {
-  rotate([ 0, 90, 0 ]) cylinder(d=can_diameter, h=can_height, center=true);
-}
-cd = can_diameter;
-yy = cd / 2.3;
-#translate([ 0, yy + -2 * cd, cd * 0.70 ]) can();
-#translate([ 0, yy + -1 * cd, cd * 0.85 ]) can();
-#translate([ 0, yy +  0 * cd, cd * 1.00 ]) can();
-#translate([ 0, yy +  1 * cd, cd * 1.15 ]) can();
-//#translate([ 0, yy +  2 * cd, cd * 1.1 ]) can();
+//module can() {
+//  rotate([ 0, 90, 0 ]) cylinder(d=can_diameter, h=can_height, center=true);
+//}
+//cd = can_diameter;
+//yy = cd / 6.3;
+//#translate([ 0, yy + -2 * cd, cd * 0.70 ]) can();
+//#translate([ 0, yy + -1 * cd, cd * 0.85 ]) can();
+//#translate([ 0, yy +  0 * cd, cd * 1.00 ]) can();
+//#translate([ 0, yy +  1 * cd, cd * 1.15 ]) can();
+//#translate([ 0, yy +  2 * cd, cd * 1.30 ]) can();
 
