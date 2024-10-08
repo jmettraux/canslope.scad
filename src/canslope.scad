@@ -13,10 +13,10 @@ can_base_diameter = 52;
 
 can_height_two = 116;
 
-slope_length = 300;
-slope_height = 40;
+slope_length = 295;
+slope_height = 30;
 x_margin = 3;
-alpha = atan(slope_height / slope_length);
+//alpha = atan(slope_height / slope_length);
 
 //side_thickness = 4.2;
 //node_diameter= 14;
@@ -107,11 +107,10 @@ difference() {
   //  rotate([ 0, 90, 0 ])
   //    cylinder(r=ar, h=can_height * 1.2, center=true);
 
-  xr = 10;
+  xs = 20;
     //
-  translate([ 0, - 0.5 * slope_length - 0.1 * xr, - 0.7 * xr ])
-    rotate([ 0, 90, 0 ])
-      cylinder(r=xr, h=can_height * 1.2, center=true);
+  translate([ 0, - 0.5 * slope_length + 0.2 * xs, - 0.4 * xs ])
+    cube([ can_height * 1.2, xs, xs ], center=true);
 
   //hside = 200; // halfer side
   //  //
